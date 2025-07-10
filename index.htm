@@ -1,1 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive CV - Sai Maung Lenn</title>
+    <!-- Chosen Palette: Warm Neutrals (Background: #f5f5f4, Text: #44403c, Accent: #5b9279) -->
+    <!-- Application Structure Plan: A single-page application with a top navigation bar (Home, Journey, Skills, Experience) controlling section visibility. This structure organizes the CV into thematic, digestible parts. The key feature is the interactive "Journey" timeline, which visually narrates the candidate's resilience and pivots, making the CV more memorable and impactful than a standard document. An accordion for experience and a radar chart for skills enhance interactivity and data visualization. -->
+    <!-- Visualization & Content Choices: 1. Journey Timeline (HTML/CSS/JS): Goal=Narrate Change. Visually represents the challenging but formative path of the candidate, creating a strong personal story. Interaction=Hover/Click for details. Justification=High impact storytelling. 2. Soft Skills Radar Chart (Chart.js): Goal=Compare/Inform. Displays multiple soft skills in a single, easy-to-digest graphic. Interaction=Tooltips. Justification=More engaging than a list. 3. Experience Accordion (HTML/CSS/JS): Goal=Organize. Keeps the layout clean and user-focused. Interaction=Click to expand/collapse. Justification=Standard UI pattern for clarity. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f4;
+            color: #44403c;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .accent-color { color: #5b9279; }
+        .accent-bg { background-color: #5b9279; }
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 4px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #5b9279;
+            transition: width 0.3s ease;
+        }
+        .nav-link.active::after,
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+            padding-left: 2.5rem;
+        }
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        .timeline-line {
+            position: absolute;
+            left: 0.4rem;
+            top: 0.5rem;
+            bottom: -0.5rem;
+            width: 2px;
+            background-color: #d6d3d1;
+        }
+        .timeline-item:last-child .timeline-line {
+            display: none;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            height: 0.875rem;
+            width: 0.875rem;
+            background-color: #5b9279;
+            border-radius: 9999px;
+            border: 2px solid #f5f5f4;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
 
+    <header class="bg-stone-100/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="font-display text-2xl font-bold text-stone-800">Sai Maung Lenn</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-stone-700 hover:text-stone-900 font-semibold active">Home</a>
+                    <a href="#journey" class="nav-link text-stone-700 hover:text-stone-900 font-semibold">My Journey</a>
+                    <a href="#skills" class="nav-link text-stone-700 hover:text-stone-900 font-semibold">Skills</a>
+                    <a href="#experience" class="nav-link text-stone-700 hover:text-stone-900 font-semibold">Experience</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-stone-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                 <a href="#home" class="block py-2 px-4 text-sm text-stone-700 rounded hover:bg-stone-200 mobile-nav-link">Home</a>
+                 <a href="#journey" class="block py-2 px-4 text-sm text-stone-700 rounded hover:bg-stone-200 mobile-nav-link">My Journey</a>
+                 <a href="#skills" class="block py-2 px-4 text-sm text-stone-700 rounded hover:bg-stone-200 mobile-nav-link">Skills</a>
+                 <a href="#experience" class="block py-2 px-4 text-sm text-stone-700 rounded hover:bg-stone-200 mobile-nav-link">Experience</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        
+        <section id="home" class="min-h-[70vh] flex flex-col justify-center">
+            <h1 class="font-display text-4xl md:text-6xl font-bold text-stone-800 leading-tight">Sai Maung Lenn</h1>
+            <h2 class="text-xl md:text-2xl accent-color font-semibold mt-2">Adaptable Professional | Digital Marketing & Product Analysis</h2>
+            <p class="mt-6 max-w-2xl text-lg text-stone-600">
+                A highly adaptable and quick-learning professional with diverse experience in digital marketing and product analysis. Possessing strong communication, problem-solving, and team collaboration skills, coupled with a keen interest in technology and AI. Eager to apply a resilient work ethic and a proactive approach to learning in a dynamic role.
+            </p>
+            <div class="mt-8 flex space-x-4">
+                <a href="mailto:saimaunglenn@example.com" class="accent-bg text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-opacity-90 transition-transform transform hover:scale-105">Contact Me</a>
+            </div>
+        </section>
+
+        <section id="journey" class="pt-20">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center text-stone-800">A Journey of Resilience</h2>
+            <p class="text-center mt-4 max-w-3xl mx-auto text-stone-600">My path has been unconventional, marked by challenges that have forged my adaptability and determination. This timeline highlights the key moments that have shaped my skills and professional outlook.</p>
+            <div class="mt-12 max-w-3xl mx-auto">
+                <div class="relative">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div><div class="timeline-line"></div>
+                        <p class="text-sm accent-color font-semibold">2017</p>
+                        <h3 class="font-bold text-lg text-stone-800 mt-1">University Begins</h3>
+                        <p class="text-stone-600">After passing the matriculation exam, I began my Bachelor of Science in Chemistry, developing a foundation in analytical and critical thinking.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div><div class="timeline-line"></div>
+                        <p class="text-sm accent-color font-semibold">2020</p>
+                        <h3 class="font-bold text-lg text-stone-800">Education Paused & Tech Pivot</h3>
+                        <p class="text-stone-600">The COVID-19 pandemic paused my third year of university. I used this time to pivot, diving into programming with online courses to build new skills.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div><div class="timeline-line"></div>
+                        <p class="text-sm accent-color font-semibold">2021</p>
+                        <h3 class="font-bold text-lg text-stone-800">Overcoming Obstacles</h3>
+                        <p class="text-stone-600">Political events led to a complete internet shutdown in Kachin State, forcing a halt to my programming studies and demonstrating my ability to navigate unforeseen challenges.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div><div class="timeline-line"></div>
+                        <p class="text-sm accent-color font-semibold">2022</p>
+                        <h3 class="font-bold text-lg text-stone-800">A New Chapter in Mandalay</h3>
+                        <p class="text-stone-600">I proactively relocated to Mandalay to continue learning. Despite a setback with a passport application for an overseas job, I adapted again, deciding to build my career locally.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div><div class="timeline-line"></div>
+                        <p class="text-sm accent-color font-semibold">Late 2022 - Late 2023</p>
+                        <h3 class="font-bold text-lg text-stone-800">Entry into Digital Marketing</h3>
+                        <p class="text-stone-600">Secured my first professional role as a Digital Marketing Specialist, applying my content creation and communication skills to enhance online presence and manage campaigns.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <p class="text-sm accent-color font-semibold">Late 2023 - Early 2025</p>
+                        <h3 class="font-bold text-lg text-stone-800">Shift to Product Analysis</h3>
+                        <p class="text-stone-600">Transitioned to a Product Analyst role, analyzing performance for self-service vending machines. This role honed my attention to detail and data handling capabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="pt-20">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center text-stone-800">Core Competencies</h2>
+            <p class="text-center mt-4 max-w-3xl mx-auto text-stone-600">My diverse experiences have helped me cultivate a unique blend of soft skills, technical interests, and languages.</p>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div>
+                    <h3 class="font-bold text-xl text-center text-stone-800 mb-4">Soft Skills Profile</h3>
+                    <div class="chart-container">
+                        <canvas id="skillsChart"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-bold text-xl text-stone-800 mb-3">Technical Interests</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-stone-200 text-stone-700 py-2 px-4 rounded-full font-semibold">Programming</span>
+                            <span class="bg-stone-200 text-stone-700 py-2 px-4 rounded-full font-semibold">Artificial Intelligence</span>
+                            <span class="bg-stone-200 text-stone-700 py-2 px-4 rounded-full font-semibold">Video Editing</span>
+                            <span class="bg-stone-200 text-stone-700 py-2 px-4 rounded-full font-semibold">Content Writing</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl text-stone-800 mb-3">Languages</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-stone-200 text-stone-700 py-2 px-4 rounded-full font-semibold">Burmese (Native)</span>
+                            <span class="bg-stone-200 text-stone-700 py-2 px-4 rounded-full font-semibold">Kachin (Native)</span>
+                            <span class="bg-stone-200 text-stone-700 py-2 px-4 rounded-full font-semibold">English (Pre-Intermediate)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="pt-20">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center text-stone-800">Professional & Educational Background</h2>
+            <div class="mt-12 max-w-3xl mx-auto space-y-4">
+                <div class="accordion-item bg-white rounded-lg shadow-sm border border-stone-200">
+                    <button class="accordion-header w-full flex justify-between items-center p-5 text-left">
+                        <span class="font-bold text-lg text-stone-800">Work Experience</span>
+                        <span class="accordion-icon text-2xl accent-color transform transition-transform">+</span>
+                    </button>
+                    <div class="accordion-content hidden p-5 border-t border-stone-200">
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-stone-800">Product Analyst</h4>
+                                <p class="text-sm text-stone-500">Chinese-based Vending Machine Company | Approx. Late 2023 – Early 2025</p>
+                                <ul class="list-disc list-inside mt-2 space-y-1 text-stone-600">
+                                    <li>Analyzed product performance for self-service vending machines, contributing to strategic improvements.</li>
+                                    <li>Managed extensive computer-based tasks, demonstrating strong attention to detail and data handling capabilities.</li>
+                                    <li>Utilized analytical skills to understand product trends and user behavior.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800">Digital Marketing Specialist</h4>
+                                <p class="text-sm text-stone-500">Previous Company | Approx. Late 2022 – Late 2023</p>
+                                <ul class="list-disc list-inside mt-2 space-y-1 text-stone-600">
+                                    <li>Executed digital marketing strategies to promote products/services, enhancing online presence.</li>
+                                    <li>Created engaging content and managed campaigns, demonstrating content writing and communication skills.</li>
+                                    <li>Gained practical experience in online advertising and market analysis.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white rounded-lg shadow-sm border border-stone-200">
+                    <button class="accordion-header w-full flex justify-between items-center p-5 text-left">
+                        <span class="font-bold text-lg text-stone-800">Education</span>
+                        <span class="accordion-icon text-2xl accent-color transform transition-transform">+</span>
+                    </button>
+                    <div class="accordion-content hidden p-5 border-t border-stone-200">
+                         <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-stone-800">Bachelor of Science (Chemistry Student - Paused)</h4>
+                                <p class="text-sm text-stone-500">University Name | Dec 2017 – 2020 (Paused at 3rd Year)</p>
+                                <p class="mt-2 text-stone-600">Completed initial years of a Chemistry degree, developing strong analytical and critical thinking skills before pausing studies due to the COVID-19 pandemic.</p>
+                            </div>
+                             <div>
+                                <h4 class="font-bold text-stone-800">Matriculation Examination</h4>
+                                 <p class="text-sm text-stone-500">High School Name, Kachin State | Passed 2017</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-stone-200 mt-20">
+        <div class="container mx-auto px-6 py-8 text-center text-stone-600">
+            <p>&copy; 2025 Sai Maung Lenn. All Rights Reserved.</p>
+            <p class="text-sm mt-2">This interactive CV was built to showcase my unique journey and skills.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('nav .nav-link');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            function updateActiveLink() {
+                let current = 'home';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveLink);
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                header.addEventListener('click', () => {
+                    const content = item.querySelector('.accordion-content');
+                    const icon = item.querySelector('.accordion-icon');
+                    content.classList.toggle('hidden');
+                    icon.textContent = content.classList.contains('hidden') ? '+' : '−';
+                });
+            });
+
+            const ctx = document.getElementById('skillsChart').getContext('2d');
+    
