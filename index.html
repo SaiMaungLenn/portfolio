@@ -1,103 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sai Maung Lenn's Portfolio</title>
-    <!-- Chosen Palette: Warm Neutrals (Background: #f5f5f4, Text: #44403c, Accent: #5b9279) -->
-    <!-- Application Structure Plan: A single-page application with a top navigation bar (Home, Journey, Skills, Experience) controlling section visibility. This structure organizes the CV into thematic, digestible parts. The key feature is the interactive "Journey" timeline, which visually narrates the candidate's resilience and pivots, making the CV more memorable and impactful than a standard document. An accordion for experience and a radar chart for skills enhance interactivity and data visualization. -->
-    <!-- Visualization & Content Choices: 1. Journey Timeline (HTML/CSS/JS): Goal=Narrate Change. Visually represents the challenging but formative path of the candidate, creating a strong personal story. Interaction=Hover/Click for details. Justification=High impact storytelling. 2. Soft Skills Radar Chart (Chart.js): Goal=Compare/Inform. Displays multiple soft skills in a single, easy-to-digest graphic. Interaction=Tooltips. Justification=More engaging than a list. 3. Experience Accordion (HTML/CSS/JS): Goal=Organize. Keeps the layout clean and user-focused. Interaction=Click to expand/collapse. Justification=Standard UI pattern for clarity. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f5f5f4;
-            color: #44403c;
-            font-family: 'Inter', sans-serif;
-        }
-        .font-display {
-            font-family: 'Playfair Display', serif;
-        }
-        .accent-color { color: #5b9279; }
-        .accent-bg { background-color: #5b9279; }
-        .nav-link {
-            transition: all 0.3s ease;
-            position: relative;
-            padding-bottom: 4px;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #5b9279;
-            transition: width 0.3s ease;
-        }
-        .nav-link.active::after,
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .timeline-item {
-            position: relative;
-            padding-bottom: 2.5rem;
-            padding-left: 2.5rem;
-        }
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-        .timeline-line {
-            position: absolute;
-            left: 0.4rem;
-            top: 0.5rem;
-            bottom: -0.5rem;
-            width: 2px;
-            background-color: #d6d3d1;
-        }
-        .timeline-item:last-child .timeline-line {
-            display: none;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            height: 0.875rem;
-            width: 0.875rem;
-            background-color: #5b9279;
-            border-radius: 9999px;
-            border: 2px solid #f5f5f4;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 400px;
-            }
-        }
-        /* Animation for sections */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+ 
 </head>
 <body class="antialiased">
 
@@ -128,11 +43,12 @@
 
     <main class="container mx-auto px-6 py-12 md:py-20">
         
-        <section id="home" class="min-h-[70vh] flex flex-col justify-center fade-in-section">
+        <section id="home" class="min-h-[70vh] flex flex-col justify-center items-center text-center fade-in-section">
+            <img src="meriko.jpeg" alt="Sai Maung Lenn Profile Photo" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover shadow-lg border-4 border-white">
             <h1 class="font-display text-4xl md:text-6xl font-bold text-stone-800 leading-tight">Sai Maung Lenn</h1>
-<!--             <h2 class="text-xl md:text-2xl accent-color font-semibold mt-2">Adaptable Professional | Digital Marketing & Product Analysis</h2> -->
+            
             <p class="mt-6 max-w-2xl text-lg text-stone-600">
-                A highly adaptable and quick-learning professional with diverse experience in digital marketing and product analysis. Possessing strong communication, problem-solving, and team collaboration skills, coupled with a keen interest in technology and AI. Eager to apply a resilient work ethic and a proactive approach to learning in a dynamic role.
+                I am an adaptable person with experience in digital marketing and product analysis. I have good communication and problem-solving skills, and I enjoy working with a team. I have a strong interest in technology and AI, and I am always ready to learn new things. I work hard and stay positive, even when facing challenges. ( And I'm also a bit of an introvert 🤫. )
             </p>
             <p class="text-lg md:text-xl text-stone-600 mt-4">maunglenn@gmail.com | 09984027502</p>
             <div class="mt-4 flex space-x-4">
@@ -141,8 +57,8 @@
         </section>
 
         <section id="journey" class="pt-20 fade-in-section">
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-center text-stone-800">A Journey of Resilience</h2>
-            <p class="text-center mt-4 max-w-3xl mx-auto text-stone-600">My path has been unconventional, marked by challenges that have forged my adaptability and determination. This timeline highlights the key moments that have shaped my skills and professional outlook.</p>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center text-stone-800">A Story of Strength and Learning</h2>
+            <p class="text-center mt-4 max-w-3xl mx-auto text-stone-600">My journey has not been a straight path, but every challenge has made me stronger and more adaptable. This timeline shows the key moments that helped me build my skills and shape how I work today. Even though I don't have a lot of experience, I am very active and learn new things easily. <br> Here are some moments from my journey.</p>
             <div class="mt-12 max-w-3xl mx-auto">
                 <div class="relative">
                     <div class="timeline-item">
@@ -154,32 +70,32 @@
                     <div class="timeline-item">
                         <div class="timeline-dot"></div><div class="timeline-line"></div>
                         <p class="text-sm accent-color font-semibold">2020</p>
-                        <h3 class="font-bold text-lg text-stone-800">Education Paused & Tech Pivot</h3>
-                        <p class="text-stone-600">The COVID-19 pandemic paused my third year of university. I used this time to pivot, diving into programming with online courses to build new skills.</p>
+                        <h3 class="font-bold text-lg text-stone-800">Education Paused & Entered the Tech World</h3>
+                        <p class="text-stone-600">When COVID-19 paused my third year at university, I used that time to follow my interest in technology. I started learning programming through online courses and focused on building new skills.</p>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div><div class="timeline-line"></div>
                         <p class="text-sm accent-color font-semibold">2021</p>
-                        <h3 class="font-bold text-lg text-stone-800">Overcoming Obstacles</h3>
-                        <p class="text-stone-600">Political events led to a complete internet shutdown in Kachin State, forcing a halt to my programming studies and demonstrating my ability to navigate unforeseen challenges.</p>
+                        <h3 class="font-bold text-lg text-stone-800">Unexpected Offline Years</h3>
+                        <p class="text-stone-600">Because of political events, Kachin State experienced a full internet shutdown. This made it impossible for me to continue my programming studies.</p>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div><div class="timeline-line"></div>
                         <p class="text-sm accent-color font-semibold">2022</p>
-                        <h3 class="font-bold text-lg text-stone-800">A New Chapter in Mandalay</h3>
-                        <p class="text-stone-600">I proactively relocated to Mandalay to continue learning. Despite a setback with a passport application for an overseas job, I adapted again, deciding to build my career locally.</p>
+                        <h3 class="font-bold text-lg text-stone-800">Moved to Mandalay</h3>
+                        <p class="text-stone-600">In September 2022, I decided to move to Mandalay for a fresh start. I began learning Japanese with the goal of working overseas. Unfortunately, my passport application was rejected because of mismatched information between my national ID and household registration.</p>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div><div class="timeline-line"></div>
-                        <p class="text-sm accent-color font-semibold">Late 2022 - Late 2023</p>
-                        <h3 class="font-bold text-lg text-stone-800">Entry into Digital Marketing</h3>
-                        <p class="text-stone-600">Secured my first professional role as a Digital Marketing Specialist, applying my content creation and communication skills to enhance online presence and manage campaigns.</p>
+                        <p class="text-sm accent-color font-semibold">2022 - 2023</p>
+                        <h3 class="font-bold text-lg text-stone-800">Entry into Digital Marketing & Content Writing</h3>
+                        <p class="text-stone-600">I decided to stay in Mandalay and look for a job. I found a position as a Digital Marketing and Content Writer at a tech company and worked there for one year. After that, I returned to Kachin briefly but realized I couldn’t live in an area without internet or mobile connection. So, I came back to Mandalay and started looking for a job again.</p>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <p class="text-sm accent-color font-semibold">Late 2023 - Early 2025</p>
-                        <h3 class="font-bold text-lg text-stone-800">Shift to Product Analysis</h3>
-                        <p class="text-stone-600">Transitioned to a Product Analyst role, analyzing performance for self-service vending machines. This role honed my attention to detail and data handling capabilities.</p>
+                        <h3 class="font-bold text-lg text-stone-800">Shift to Product Analyst</h3>
+                        <p class="text-stone-600">I found a position as a Product Analyst for a Chinese-based company specializing in self-service vending machines. The role required long hours in front of the computer, sometimes up to 15 hours a day. Due to health concerns, I decided to leave that job</p>
                     </div>
                 </div>
             </div>
@@ -187,7 +103,7 @@
 
         <section id="skills" class="pt-20 fade-in-section">
             <h2 class="font-display text-3xl md:text-4xl font-bold text-center text-stone-800">Core Competencies</h2>
-            <p class="text-center mt-4 max-w-3xl mx-auto text-stone-600">My diverse experiences have helped me cultivate a unique blend of soft skills, technical interests, and languages.</p>
+            <p class="text-center mt-4 max-w-3xl mx-auto text-stone-600">I’m a fast learner, highly adaptable, and eager to keep improving. I work well in teams and can easily understand and apply new information when taught.</p>
             <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div>
                     <h3 class="font-bold text-xl text-center text-stone-800 mb-4">Soft Skills Profile</h3>
@@ -232,19 +148,19 @@
                             <div>
                                 <h4 class="font-bold text-stone-800">Product Analyst</h4>
                                 <p class="text-sm text-stone-500">Chinese-based Vending Machine Company | Approx. Late 2023 – Early 2025</p>
-                                <ul class="list-disc list-inside mt-2 space-y-1 text-stone-600">
+                                <!-- <ul class="list-disc list-inside mt-2 space-y-1 text-stone-600">
                                     <li>Analyzed product performance for self-service vending machines, contributing to strategic improvements.</li>
                                     <li>Managed extensive computer-based tasks, demonstrating strong attention to detail and data handling capabilities.</li>
-                                    <li>Utilized analytical skills to understand product trends and user behavior.</li>
+                                    <li>Utilized analytical skills to understand product trends and user behavior.</li> -->
                                 </ul>
                             </div>
                             <div>
-                                <h4 class="font-bold text-stone-800">Digital Marketing Specialist</h4>
+                                <h4 class="font-bold text-stone-800">Digital Marketing & Content Writer</h4>
                                 <p class="text-sm text-stone-500">Previous Company | Approx. Late 2022 – Late 2023</p>
-                                <ul class="list-disc list-inside mt-2 space-y-1 text-stone-600">
+                                <!-- <ul class="list-disc list-inside mt-2 space-y-1 text-stone-600">
                                     <li>Executed digital marketing strategies to promote products/services, enhancing online presence.</li>
                                     <li>Created engaging content and managed campaigns, demonstrating content writing and communication skills.</li>
-                                    <li>Gained practical experience in online advertising and market analysis.</li>
+                                    <li>Gained practical experience in online advertising and market analysis.</li> -->
                                 </ul>
                             </div>
                         </div>
@@ -265,7 +181,7 @@
                             </div>
                              <div>
                                 <h4 class="font-bold text-stone-800">Matriculation Examination</h4>
-                                 <p class="text-sm text-stone-500">High School Name, Kachin State | Passed 2017</p>
+                                 <p class="text-sm text-stone-500">Myitkyina, Kachin State | Passed 2017</p>
                             </div>
                         </div>
                     </div>
@@ -282,130 +198,6 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('main section');
-            const navLinks = document.querySelectorAll('nav .nav-link');
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-            function updateActiveLink() {
-                let current = 'home';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (window.pageYOffset >= sectionTop - 100) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').substring(1) === current) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', updateActiveLink);
-
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
-            });
-
-            const accordionItems = document.querySelectorAll('.accordion-item');
-            accordionItems.forEach(item => {
-                const header = item.querySelector('.accordion-header');
-                header.addEventListener('click', () => {
-                    const content = item.querySelector('.accordion-content');
-                    const icon = item.querySelector('.accordion-icon');
-                    content.classList.toggle('hidden');
-                    icon.textContent = content.classList.contains('hidden') ? '+' : '−';
-                });
-            });
-
-            const ctx = document.getElementById('skillsChart').getContext('2d');
-            const skillsChart = new Chart(ctx, {
-                type: 'radar',
-                data: {
-                    labels: ['Adaptability', 'Problem-Solving', 'Active Learning', 'Team Collaboration', 'Communication', 'Attention to Detail'],
-                    datasets: [{
-                        label: 'Soft Skills',
-                        data: [9, 8, 9, 7, 8, 8],
-                        backgroundColor: 'rgba(91, 146, 121, 0.2)',
-                        borderColor: 'rgba(91, 146, 121, 1)',
-                        pointBackgroundColor: 'rgba(91, 146, 121, 1)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgba(91, 146, 121, 1)'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        r: {
-                            angleLines: {
-                                color: '#d6d3d1'
-                            },
-                            grid: {
-                                color: '#d6d3d1'
-                            },
-                            pointLabels: {
-                                font: {
-                                    size: 12,
-                                    weight: 'bold'
-                                },
-                                color: '#44403c'
-                            },
-                            ticks: {
-                                backdropColor: '#f5f5f4',
-                                color: '#78716c',
-                                stepSize: 2,
-                                font: {
-                                    weight: 'bold'
-                                }
-                            },
-                            suggestedMin: 0,
-                            suggestedMax: 10
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    }
-                }
-            });
-
-            // Intersection Observer for fade-in animation
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    } else {
-                        // Optional: remove 'is-visible' if you want the animation to replay on scroll back up
-                        // entry.target.classList.remove('is-visible');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.fade-in-section').forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
+<script src="main.js"></script>
 </body>
 </html>
