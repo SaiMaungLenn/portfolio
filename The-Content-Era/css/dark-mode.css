@@ -1,0 +1,400 @@
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+}
+
+.dark-mode .header {
+    background-color: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .header.scrolled {
+    background-color: rgba(20, 20, 20, 0.98);
+}
+
+.dark-mode .nav-list a {
+    color: #e0e0e0;
+}
+
+.dark-mode .hamburger,
+.dark-mode .hamburger::before,
+.dark-mode .hamburger::after {
+    background-color: #e0e0e0;
+}
+
+.dark-mode #darkModeToggle {
+    color: #e0e0e0;
+}
+
+.dark-mode #darkModeToggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.dark-mode .hero::before {
+    opacity: 0.1;
+}
+
+.dark-mode .hero h1 {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .hero p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* About Page Dark Mode */
+.dark-mode .about-hero {
+    background: linear-gradient(135deg, #2d1b69 0%, #11998e 100%);
+}
+
+.dark-mode .profile-section,
+.dark-mode .mission-card,
+.dark-mode .vision-card,
+.dark-mode .values-section,
+.dark-mode .experience-section {
+    background-color: #1a1a1a;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .profile-info h2,
+.dark-mode .values-section h2,
+.dark-mode .experience-section h2 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dark-mode .profile-info .title {
+    color: #667eea;
+}
+
+.dark-mode .profile-info .bio {
+    color: #b0b0b0;
+}
+
+.dark-mode .mission-card h3,
+.dark-mode .vision-card h3,
+.dark-mode .value-item h4 {
+    color: #ffffff;
+}
+
+.dark-mode .mission-card p,
+.dark-mode .vision-card p,
+.dark-mode .value-item p {
+    color: #b0b0b0;
+}
+
+.dark-mode .timeline-content {
+    background-color: #1a1a1a;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .timeline-content h4 {
+    color: #667eea;
+}
+
+.dark-mode .timeline-company {
+    color: #ffffff;
+}
+
+.dark-mode .timeline-date,
+.dark-mode .timeline-content p {
+    color: #b0b0b0;
+}
+
+/* Contact Page Dark Mode */
+.dark-mode .contact-hero {
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+}
+
+.dark-mode .contact-form-section,
+.dark-mode .contact-info-section,
+.dark-mode .faq-section {
+    background-color: #1a1a1a;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .contact-form-section h2,
+.dark-mode .contact-info-section h2,
+.dark-mode .faq-section h2 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dark-mode .form-group label {
+    color: #ffffff;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+    background-color: #2a2a2a;
+    border-color: #404040;
+    color: #ffffff;
+}
+
+.dark-mode .form-group input:focus,
+.dark-mode .form-group textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.dark-mode .contact-item {
+    background-color: rgba(102, 126, 234, 0.1);
+}
+
+.dark-mode .contact-item:hover {
+    background-color: rgba(102, 126, 234, 0.2);
+}
+
+.dark-mode .contact-details h4 {
+    color: #ffffff;
+}
+
+.dark-mode .contact-details p {
+    color: #b0b0b0;
+}
+
+.dark-mode .contact-social h3 {
+    color: #ffffff;
+}
+
+.dark-mode .social-link {
+    background-color: #2a2a2a;
+    border-color: #404040;
+    color: #ffffff;
+}
+
+.dark-mode .social-link:hover {
+    border-color: #667eea;
+    background-color: rgba(102, 126, 234, 0.1);
+}
+
+.dark-mode .faq-item {
+    border-color: #404040;
+}
+
+.dark-mode .faq-item:hover {
+    border-color: #667eea;
+}
+
+.dark-mode .faq-question {
+    background-color: transparent;
+}
+
+.dark-mode .faq-question:hover {
+    background-color: rgba(102, 126, 234, 0.1);
+}
+
+.dark-mode .faq-question h4 {
+    color: #ffffff;
+}
+
+.dark-mode .faq-answer p {
+    color: #b0b0b0;
+}
+
+/* Article Cards Dark Mode */
+.dark-mode .article-card {
+    background-color: #1a1a1a;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .article-content h3 a {
+    color: #ffffff;
+}
+
+.dark-mode .article-content h3 a:hover {
+    color: #667eea;
+}
+
+.dark-mode .article-meta {
+    color: #b0b0b0;
+}
+
+.dark-mode .article-excerpt {
+    color: #b0b0b0;
+}
+
+.dark-mode .read-more {
+    color: #667eea;
+}
+
+.dark-mode .read-more:hover {
+    color: #764ba2;
+}
+
+/* Newsletter Dark Mode */
+.dark-mode .newsletter {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.dark-mode .newsletter-form input {
+    background-color: #2a2a2a;
+    border: 1px solid #404040;
+    color: #ffffff;
+}
+
+.dark-mode .newsletter-form input::placeholder {
+    color: #b0b0b0;
+}
+
+.dark-mode .newsletter-form button {
+    background-color: #667eea;
+    color: #ffffff;
+}
+
+.dark-mode .newsletter-form button:hover {
+    background-color: #764ba2;
+}
+
+/* Footer Dark Mode */
+.dark-mode .footer {
+    background-color: #0d0d0d;
+}
+
+.dark-mode .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .social-links a {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .social-links a:hover {
+    background-color: #667eea;
+}
+
+/* Scroll to Top Button Dark Mode */
+.dark-mode .scroll-to-top {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Notification Dark Mode */
+.dark-mode .notification {
+    background-color: #2a2a2a !important;
+    border: 1px solid #404040;
+}
+
+/* Loading Spinner Dark Mode */
+.dark-mode .loading-overlay {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.dark-mode .spinner {
+    border-color: rgba(255, 255, 255, 0.2);
+    border-top-color: #667eea;
+}
+
+/* Tooltip Dark Mode */
+.dark-mode .tooltip {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border: 1px solid #404040;
+}
+
+/* Form Focus Effects Dark Mode */
+.dark-mode .form-group.focused label {
+    color: #667eea;
+}
+
+.dark-mode .form-focus-effect {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Value Items Dark Mode */
+.dark-mode .value-item::before {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Timeline Dark Mode */
+.dark-mode .timeline::before {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.dark-mode .timeline-marker {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 0 0 5px #1a1a1a;
+}
+
+/* Section Titles Dark Mode */
+.dark-mode .section-title h2::after {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Button Hover Effects Dark Mode */
+.dark-mode .btn:hover {
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Card Hover Effects Dark Mode */
+.dark-mode .article-card:hover,
+.dark-mode .mission-card:hover,
+.dark-mode .vision-card:hover,
+.dark-mode .value-item:hover,
+.dark-mode .profile-section:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Social Links Dark Mode */
+.dark-mode .profile-info .social-links a:hover {
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Contact Icons Dark Mode */
+.dark-mode .contact-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.dark-mode .contact-item:hover .contact-icon {
+    transform: scale(1.1);
+}
+
+/* Mission/Vision Icons Dark Mode */
+.dark-mode .mission-card .icon,
+.dark-mode .vision-card .icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.dark-mode .value-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Typing Animation Dark Mode */
+.dark-mode .hero h1 {
+    border-right-color: #ffffff;
+}
+
+/* Mobile Navigation Dark Mode */
+.dark-mode .nav-list {
+    background-color: #1a1a1a;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Focus States Dark Mode */
+.dark-mode input:focus,
+.dark-mode textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* Selection Dark Mode */
+.dark-mode ::selection {
+    background-color: rgba(102, 126, 234, 0.3);
+    color: #ffffff;
+}
+
+.dark-mode ::-moz-selection {
+    background-color: rgba(102, 126, 234, 0.3);
+    color: #ffffff;
+}
