@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles | Sai Maung Lenn</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="darkModeStyle" disabled>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Sai Maung Lenn</a>
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <button id="darkModeToggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero articles-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-fade-in">All Articles</h1>
+                <p class="animate-fade-in-delay">Explore my latest thoughts, insights, and stories on writing, creativity, and mindful living.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Page Content -->
+    <section class="articles-page">
+        <div class="container">
+            <div class="page-header animate-slide-up">
+                <div class="search-filter-section">
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search articles..." aria-label="Search articles">
+                        <button type="button" id="searchBtn" aria-label="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="filter-options">
+                        <select id="categoryFilter" aria-label="Filter by category">
+                            <option value="">All Categories</option>
+                            <option value="writing">Writing</option>
+                            <option value="creativity">Creativity</option>
+                            <option value="mindfulness">Mindfulness</option>
+                            <option value="productivity">Productivity</option>
+                            <option value="lifestyle">Lifestyle</option>
+                        </select>
+                        <select id="sortFilter" aria-label="Sort articles">
+                            <option value="latest">Latest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="popular">Most Popular</option>
+                            <option value="title">Title A-Z</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="articles-grid" id="articlesGrid">
+                <!-- Article Card 1 -->
+                <article class="article-card animate-slide-up" data-category="writing" data-date="2020-3-1">
+                    <div class="article-image">
+                        <img src="images/disneylogo.jpg" alt="Article thumbnail" loading="lazy">
+                        <div class="article-category">Writing</div>
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="article-detail.html">🏰 ကမ္ဘာကျော် Animation စတူဒီယိုကြီးရဲ့ ခရီးကြမ်းနဲ့ မသိသေးတဲ့ Logo သမိုင်း 💫</a></h3>
+                        <p class="article-meta">
+                            <span class="author">Sai Maung Lenn</span>
+                            <span class="date">Published on <time datetime="2023-12-15">March 1, 2020</time></span>
+                            <span class="reading-time"><i class="fas fa-clock"></i> 3 min read</span>
+                        </p>
+                        <p class="article-excerpt">Animation ကာတွန်းကားလို့ ပြောလိုက်တာနဲ့ လူတိုင်းရဲ့ မျက်လုံးထဲမှာ Disney ကို ပြေးမြင်မိကြမှာ အသေအချာပါပဲ။ အခုချိန်မှာ ကမ္ဘာ့အကြီးဆုံး Animation Production Studio တစ်ခု ဖြစ်လာတဲ့ Disney ရဲ့ စိတ်ဝင်စားစရာ သမိုင်းကြောင်းလေးနဲ့ လူသိနည်းတဲ့ Logo နောက်ကွယ်က အကြောင်းအရာလေးတွေကို ပြောပြပေးချင်ပါတယ်။</p>
+                        <div class="article-tags">
+                            <span class="tag">Writing</span>
+                            <span class="tag">Mindfulness</span>
+                            <span class="tag">Creativity</span>
+                        </div>
+                        <a href="article-detail.html?id=1" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article Card 2 -->
+                <article class="article-card animate-slide-up" data-category="productivity" data-date="2022-10-10">
+                    <div class="article-image">
+                        <img src="images/interestrate.jpg" alt="Article thumbnail" loading="lazy">
+                        <div class="article-category">Productivity</div>
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="article-detail.html">ဘဏ်အတိုးနှုန်းမြင့်တဲ့ မြန်မာပြည်၊ ဘာကြောင့်လဲ? 💸</a></h3>
+                        <p class="article-meta">
+                            <span class="author">Sai Maung Lenn</span>
+                            <span class="date">Published on <time datetime="2022-10-10">October 10, 2022</time></span>
+                            <span class="reading-time"><i class="fas fa-clock"></i> 5 min read</span>
+                        </p>
+                        <p class="article-excerpt">မြန်မာနိုင်ငံက လူကြီး၊ လူငယ်တော်တော်များများဟာ နိုင်ငံခြားဘဏ်အတိုးနှုန်းတွေက မြန်မာနိုင်ငံထက် ပိုများမယ်လို့ ထင်တတ်ကြတာ များပါတယ်။ တကယ်တော့ ဒီအထင်အမြင်ဟာ ...</p>
+                        <div class="article-tags">
+                            <span class="tag">Productivity</span>
+                            <span class="tag">Digital Minimalism</span>
+                            <span class="tag">Focus</span>
+                        </div>
+                        <a href="article-detail.html?id=2" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article Card 3 -->
+                <article class="article-card animate-slide-up" data-category="creativity" data-date="2025-3-28">
+                    <div class="article-image">
+                        <img src="images/earthquake.jpg" alt="Article thumbnail" loading="lazy">
+                        <div class="article-category">Creativity</div>
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="article-detail.html">🌍 ငလျင်ရဲ့ ပြင်းအားအဆင့်တွေနဲ့ သိထားသင့်တဲ့ အချက်များ 🚨</a></h3>
+                        <p class="article-meta">
+                            <span class="author">Sai Maung Lenn</span>
+                            <span class="date">Published on <time datetime="2025-3-28">March 28, 2025</time></span>
+                            <span class="reading-time"><i class="fas fa-clock"></i> 6 min read</span>
+                        </p>
+                        <p class="article-excerpt">ငလျင်ဆိုတာ ဘယ်သူမှကြုံတွေ့ချင်တဲ့ အရာတော့မဟုတ်ပါဘူး။ ဒါပေမဲ့ ဘယ်လောက်ပြင်းရင် ဘာဖြစ်နိုင်လဲဆိုတာ သိထားဖို့ လိုပါတယ်။ ဒါကြောင့် ငလျင်ပြင်းအားအဆင့် (Magnitude Level) တွေအလိုက် ဖြစ်ပေါ်နိုင်သည့်အခြေအနေတွေနဲ့ သတိပြုရမယ့်အချက်တွေကို လိုရင်းတိုရှင်း ဖော်ပြပေးလိုက်ပါတယ်။
+
+</p>
+                        <div class="article-tags">
+                            <span class="tag">Creativity</span>
+                            <span class="tag">Voice</span>
+                            <span class="tag">Style</span>
+                        </div>
+                        <a href="article-detail.html?id=3" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article Card 4 -->
+                <article class="article-card animate-slide-up" data-category="mindfulness" data-date="2023-11-28">
+                    <div class="article-image">
+                        <img src="images/sample4.jpg" alt="Article thumbnail" loading="lazy">
+                        <div class="article-category">Mindfulness</div>
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="article-detail.html">Morning Rituals for Creative Success</a></h3>
+                        <p class="article-meta">
+                            <span class="author">The Content Era</span>
+                            <span class="date">Published on <time datetime="2023-11-28">November 28, 2023</time></span>
+                            <span class="reading-time"><i class="fas fa-clock"></i> 8 min read</span>
+                        </p>
+                        <p class="article-excerpt">Transform your mornings with these powerful rituals that set the tone for a productive and creative day. Learn how to create lasting habits...</p>
+                        <div class="article-tags">
+                            <span class="tag">Mindfulness</span>
+                            <span class="tag">Morning Routine</span>
+                            <span class="tag">Habits</span>
+                        </div>
+                        <a href="article-detail.html?id=4" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article Card 5 -->
+                <article class="article-card animate-slide-up" data-category="lifestyle" data-date="2023-11-20">
+                    <div class="article-image">
+                        <img src="images/sample5.jpg" alt="Article thumbnail" loading="lazy">
+                        <div class="article-category">Lifestyle</div>
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="article-detail.html">Creating Your Ideal Writing Space</a></h3>
+                        <p class="article-meta">
+                            <span class="author">The Content Era</span>
+                            <span class="date">Published on <time datetime="2023-11-20">November 20, 2023</time></span>
+                            <span class="reading-time"><i class="fas fa-clock"></i> 4 min read</span>
+                        </p>
+                        <p class="article-excerpt">Design a writing environment that inspires creativity and productivity. From furniture to lighting, discover what makes the perfect writing space...</p>
+                        <div class="article-tags">
+                            <span class="tag">Lifestyle</span>
+                            <span class="tag">Workspace</span>
+                            <span class="tag">Environment</span>
+                        </div>
+                        <a href="article-detail.html?id=5" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article Card 6 -->
+                <article class="article-card animate-slide-up" data-category="writing" data-date="2023-11-15">
+                    <div class="article-image">
+                        <img src="images/sample6.jpg" alt="Article thumbnail" loading="lazy">
+                        <div class="article-category">Writing</div>
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="article-detail.html">Overcoming Writer's Block</a></h3>
+                        <p class="article-meta">
+                            <span class="author">The Content Era</span>
+                            <span class="date">Published on <time datetime="2023-11-15">November 15, 2023</time></span>
+                            <span class="reading-time"><i class="fas fa-clock"></i> 9 min read</span>
+                        </p>
+                        <p class="article-excerpt">Proven strategies to break through creative blocks and get your writing flowing again. Learn to recognize and overcome common obstacles...</p>
+                        <div class="article-tags">
+                            <span class="tag">Writing</span>
+                            <span class="tag">Writer's Block</span>
+                            <span class="tag">Creativity</span>
+                        </div>
+                        <a href="article-detail.html?id=6" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article Card 7 -->
+                <article class="article-card animate-slide-up" data-category="productivity" data-date="2023-11-10">
+                    <div class="article-image">
+                        <img src="images/sample7.jpg" alt="Article thumbnail" loading="lazy">
+                        <div class="article-category">Productivity</div>
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="article-detail.html">The Pomodoro Technique for Writers</a></h3>
+                        <p class="article-meta">
+                            <span class="author">The Content Era</span>
+                            <span class="date">Published on <time datetime="2023-11-10">November 10, 2023</time></span>
+                            <span class="reading-time"><i class="fas fa-clock"></i> 6 min read</span>
+                        </p>
+                        <p class="article-excerpt">How to adapt the Pomodoro Technique specifically for writing projects. Boost your productivity with focused writing sessions...</p>
+                        <div class="article-tags">
+                            <span class="tag">Productivity</span>
+                            <span class="tag">Pomodoro</span>
+                            <span class="tag">Time Management</span>
+                        </div>
+                        <a href="article-detail.html?id=7" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article Card 8 -->
+                <article class="article-card animate-slide-up" data-category="mindfulness" data-date="2023-11-05">
+                    <div class="article-image">
+                        <img src="images/sample8.jpg" alt="Article thumbnail" loading="lazy">
+                        <div class="article-category">Mindfulness</div>
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="article-detail.html">Meditation for Creative Flow</a></h3>
+                        <p class="article-meta">
+                            <span class="author">The Content Era</span>
+                            <span class="date">Published on <time datetime="2023-11-05">November 5, 2023</time></span>
+                            <span class="reading-time"><i class="fas fa-clock"></i> 7 min read</span>
+                        </p>
+                        <p class="article-excerpt">Simple meditation techniques that can enhance your creative process and help you access deeper levels of inspiration...</p>
+                        <div class="article-tags">
+                            <span class="tag">Mindfulness</span>
+                            <span class="tag">Meditation</span>
+                            <span class="tag">Flow</span>
+                        </div>
+                        <a href="article-detail.html?id=8" class="read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="pagination animate-slide-up">
+                <a href="#" class="btn pagination-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i> Previous
+                </a>
+                <div class="pagination-numbers">
+                    <a href="#" class="btn pagination-number active">1</a>
+                    <a href="#" class="btn pagination-number">2</a>
+                    <a href="#" class="btn pagination-number">3</a>
+                    <span class="pagination-ellipsis">...</span>
+                    <a href="#" class="btn pagination-number">8</a>
+                </div>
+                <a href="#" class="btn pagination-btn" id="nextBtn">
+                    Next <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to receive my latest articles and updates</p>
+            <form id="newsletterForm" class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>About Me</h3>
+                    <p>Content creator sharing insights on writing, creativity, and mindful living.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/maunglenn" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://t.me/maunglenn" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="mailto:maunglenn@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+959984027502" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Sai Maung Lenn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

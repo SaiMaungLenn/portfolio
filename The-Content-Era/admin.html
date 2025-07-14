@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Add New Article</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="darkModeStyle" disabled>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .admin-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .admin-form {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .preview-section {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 2px solid var(--light-gray);
+        }
+        
+        .preview-card {
+            background: white;
+            border: 2px solid var(--light-gray);
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn-secondary {
+            background: var(--gray-color);
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Sai Maung Lenn</a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin.html" class="active">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Admin Content -->
+    <section class="hero" style="padding: 120px 0 60px;">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-fade-in">Add New Article</h1>
+                <p class="animate-fade-in-delay">Create and publish new articles for your website.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="admin-container">
+        <form id="articleForm" class="admin-form">
+            <h2>Article Details</h2>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="title">Article Title *</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category *</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="writing">Writing</option>
+                        <option value="productivity">Productivity</option>
+                        <option value="creativity">Creativity</option>
+                        <option value="mindfulness">Mindfulness</option>
+                        <option value="lifestyle">Lifestyle</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date">Publication Date *</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="readingTime">Reading Time *</label>
+                    <input type="text" id="readingTime" name="readingTime" placeholder="5 min read" required>
+                </div>
+            </div>
+            
+            <div class="form-group full-width">
+                <label for="excerpt">Article Excerpt *</label>
+                <textarea id="excerpt" name="excerpt" placeholder="Write a brief description of your article..." required></textarea>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="image">Image URL</label>
+                    <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="tags">Tags (comma separated)</label>
+                    <input type="text" id="tags" name="tags" placeholder="Writing, Creativity, Tips">
+                </div>
+            </div>
+            
+            <div class="form-group full-width">
+                <label for="content">Full Article Content</label>
+                <textarea id="content" name="content" placeholder="Write your full article content here..."></textarea>
+            </div>
+            
+            <div class="btn-group">
+                <button type="button" id="previewBtn" class="btn btn-secondary">
+                    <i class="fas fa-eye"></i> Preview
+                </button>
+                <button type="submit" class="btn">
+                    <i class="fas fa-save"></i> Save Article
+                </button>
+            </div>
+        </form>
+        
+        <div id="previewSection" class="preview-section" style="display: none;">
+            <h3>Article Preview</h3>
+            <div id="previewCard" class="preview-card">
+                <!-- Preview content will be inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <script src="js/articles-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('articleForm');
+            const previewBtn = document.getElementById('previewBtn');
+            const previewSection = document.getElementById('previewSection');
+            const previewCard = document.getElementById('previewCard');
+            
+            // Set default date to today
+            document.getElementById('date').value = new Date().toISOString().split('T')[0];
+            
+            // Preview functionality
+            previewBtn.addEventListener('click', function() {
+                const formData = new FormData(form);
+                const articleData = {
+                    title: formData.get('title'),
+                    excerpt: formData.get('excerpt'),
+                    category: formData.get('category'),
+                    date: formData.get('date'),
+                    image: formData.get('image') || 'images/sample1.jpg',
+                    tags: formData.get('tags').split(',').map(tag => tag.trim()).filter(tag => tag),
+                    author: 'Sai Maung Lenn',
+                    readingTime: formData.get('readingTime'),
+                    content: formData.get('content')
+                };
+                
+                // Create preview HTML
+                const previewHTML = `
+                    <div class="article-image">
+                        <img src="${articleData.image}" alt="Article thumbnail" loading="lazy">
+                        <div class="article-category">${articleData.category.charAt(0).toUpperCase() + articleData.category.slice(1)}</div>
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="#">${articleData.title}</a></h3>
+                        <p class="article-meta">
+                            <span class="author">By ${articleData.author}</span>
+                            <span class="date">Published on <time datetime="${articleData.date}">${new Date(articleData.date).toLocaleDateString()}</time></span>
+                            <span class="reading-time"><i class="fas fa-clock"></i> ${articleData.readingTime}</span>
+                        </p>
+                        <p class="article-excerpt">${articleData.excerpt}</p>
+                        <div class="article-tags">
+                            ${articleData.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                `;
+                
+                previewCard.innerHTML = previewHTML;
+                previewSection.style.display = 'block';
+                
+                // Scroll to preview
+                previewSection.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(form);
+                const articleData = {
+                    id: articlesData.length + 1,
+                    title: formData.get('title'),
+                    excerpt: formData.get('excerpt'),
+                    category: formData.get('category'),
+                    date: formData.get('date'),
+                    image: formData.get('image') || 'images/sample1.jpg',
+                    tags: formData.get('tags').split(',').map(tag => tag.trim()).filter(tag => tag),
+                    author: 'Sai Maung Lenn',
+                    readingTime: formData.get('readingTime'),
+                    content: formData.get('content')
+                };
+                
+                // Add to articles data
+                addNewArticle(articleData);
+                
+                // Save to localStorage
+                localStorage.setItem('articlesData', JSON.stringify(articlesData));
+                
+                // Show success message
+                alert('Article saved successfully! You can now view it on the articles page.');
+                
+                // Reset form
+                form.reset();
+                document.getElementById('date').value = new Date().toISOString().split('T')[0];
+                previewSection.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html> 

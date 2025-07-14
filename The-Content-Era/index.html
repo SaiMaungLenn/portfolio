@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Maung Lenn | Content Creator</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="darkModeStyle" disabled>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Sai Maung Lenn</a>
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <button id="darkModeToggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to My Content Space</h1>
+            <p>Sharing thoughts, stories, and insights through words and images</p>
+            <a href="articles.html" class="btn">Explore My Articles</a>
+        </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="featured-articles">
+        <div class="container">
+            <h2>Featured Content</h2>
+            <div class="articles-grid">
+                <!-- Article Card 1 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/sample1.jpg" alt="Article thumbnail" loading="lazy">
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="article-detail.html">The Art of Mindful Writing</a></h3>
+                        <p class="article-meta">Published on <time datetime="2023-05-15">May 15, 2023</time></p>
+                        <p class="article-excerpt">Exploring how mindfulness can enhance your writing process and creativity...</p>
+                        <a href="article-detail.html" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article Card 2 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/sample2.jpg" alt="Article thumbnail" loading="lazy">
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="article-detail.html">Digital Minimalism for Creators</a></h3>
+                        <p class="article-meta">Published on <time datetime="2023-04-22">April 22, 2023</time></p>
+                        <p class="article-excerpt">How reducing digital clutter can boost your creative output and focus...</p>
+                        <a href="article-detail.html" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article Card 3 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/sample3.jpg" alt="Article thumbnail" loading="lazy">
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="article-detail.html">Finding Your Creative Voice</a></h3>
+                        <p class="article-meta">Published on <time datetime="2023-03-10">March 10, 2023</time></p>
+                        <p class="article-excerpt">Practical exercises to discover and develop your unique writing style...</p>
+                        <a href="article-detail.html" class="read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+            <div class="view-all">
+                <a href="articles.html" class="btn">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to receive my latest articles and updates</p>
+            <form id="newsletterForm" class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>About Me</h3>
+                    <p>Content creator sharing insights on writing, creativity, and mindful living.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/maunglenn" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://t.me/maunglenn" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="mailto:maunglenn@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+959984027502" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Sai Maung Lenn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
