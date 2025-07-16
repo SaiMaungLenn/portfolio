@@ -88,29 +88,29 @@
                     <div class="contact-info-grid">
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-facebook"></i>
                             </div>
                             <div class="contact-details">
-                                <h4>Twitter</h4>
-                                <p>Follow me on Twitter</p>
+                                <h4>Facebook</h4>
+                                <p>Follow me on Facebook</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-facebook-square"></i>
                             </div>
                             <div class="contact-details">
-                                <h4>Instagram</h4>
-                                <p>Follow my creative journey</p>
+                                <h4>Facebook Page</h4>
+                                <p>Visit my Facebook Page</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <i class="fab fa-linkedin"></i>
+                                <i class="fab fa-telegram"></i>
                             </div>
                             <div class="contact-details">
-                                <h4>LinkedIn</h4>
-                                <p>Connect professionally</p>
+                                <h4>Telegram</h4>
+                                <p><a href="https://t.me/telemeetmmbot" target="_blank" rel="noopener" style="color: #22c55e; font-weight: 500;">Join my Telegram Bot</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -119,71 +119,35 @@
                             </div>
                             <div class="contact-details">
                                 <h4>Email</h4>
-                                <p>hello@Sai Maung Lenn.com</p>
-                                <p>info@Sai Maung Lenn.com</p>
+                                <p>maungenn@gmail.com</p>
+                                <p>thecontentera@gmail.com</p>
                             </div>
                         </div>
-                        
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div class="contact-details">
                                 <h4>Phone</h4>
-                                <p>+1 (555) 123-4567</p>
-                                <p>Available Mon-Fri, 9AM-6PM</p>
+                                <p>09984027502</p>
+                                <!-- <p>Available Mon-Fri, 9AM-6PM</p> -->
                             </div>
                         </div>
-                        
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="contact-details">
                                 <h4>Location</h4>
-                                <p>San Francisco, CA</p>
-                                <p>United States</p>
+                                <p>Mandalay</p>
+                                <p>Myanmar</p>
                             </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Response Time</h4>
-                                <p>Within 24 hours</p>
-                                <p>Usually much faster!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Social Links -->
-                    <div class="contact-social">
-                        <h3>Connect on Social Media</h3>
-                        <div class="social-links">
-                            <a href="#" aria-label="Facebook" class="social-link">
-                                <i class="fab fa-facebook"></i>
-                                <span>Facebook</span>
-                            </a>
-                            <a href="#" aria-label="Telegram" class="social-link">
-                                <i class="fab fa-telegram"></i>
-                                <span>Telegram</span>
-                            </a>
-                            <a href="mailto:your-email@example.com" aria-label="Email" class="social-link">
-                                <i class="fas fa-envelope"></i>
-                                <span>Email</span>
-                            </a>
-                            <a href="tel:+1234567890" aria-label="Phone" class="social-link">
-                                <i class="fas fa-phone"></i>
-                                <span>Phone</span>
-                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- FAQ Section -->
+            <!-- FAQ Section 
             <div class="faq-section animate-slide-up">
                 <h2>Frequently Asked Questions</h2>
                 <div class="faq-grid">
@@ -224,7 +188,7 @@
                         </div>
                         <div class="faq-answer">
                             <p>Yes, I offer limited consulting for content strategy and creative projects. Please reach out with your specific needs.</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -263,10 +227,10 @@
                 <div class="footer-social">
                     <h3>Connect</h3>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
-                        <a href="mailto:your-email@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="tel:+1234567890" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                        <a href="facebook.com/maunglenn" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="t.me/maunglenn" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="mailto:maunglenn@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+959984027502" aria-label="Phone"><i class="fas fa-phone"></i></a>
                     </div>
                 </div>
             </div>
@@ -277,5 +241,48 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+    // Contact form AJAX submission to Flask backend
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+
+                // Replace with your actual deployed Flask backend URL
+                const backendUrl = 'https://thecontentera.pythonanywhere.com/send_message';
+
+                fetch(backendUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        subject: subject,
+                        message: message
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Your message has been sent successfully!');
+                        contactForm.reset();
+                    } else {
+                        alert('There was an error sending your message. Please try again later.');
+                    }
+                })
+                .catch(error => {
+                    alert('There was an error sending your message. Please try again later.');
+                });
+            });
+        }
+    });
+    </script>
 </body>
 </html>
