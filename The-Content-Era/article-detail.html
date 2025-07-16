@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +8,50 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dark-mode.css" id="darkModeStyle" disabled>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 2px !important;
+        max-width: 100vw !important;
+        width: 100vw !important;
+      }
+      .article-detail .article-content {
+        font-size: 1.18em;
+        line-height: 1.85;
+        padding: 0 1px;
+        /* Remove word-break and overflow-wrap for Myanmar text */
+        white-space: pre-line;
+      }
+      .article-header h1 {
+        font-size: 1.35em;
+      }
+    }
+    </style>
 </head>
 <body>
     <!-- Header/Navigation (same as index.html) -->
     <header class="header">
         <!-- Copy header from index.html -->
+          <div class="container">
+            <a href="index.html" class="logo">Sai Maung Lenn</a>
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <button id="darkModeToggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Article Detail Content -->
@@ -23,7 +60,7 @@
         <article class="article-detail" id="article-1">
             <div class="container">
                 <div class="article-header">
-                    <h1>🏰 ကမ္ဘာကျော် Animation စတူဒီယိုကြီးရဲ့ ခရီးကြမ်းနဲ့ မသိသေးတဲ့ Logo သမိုင်း 💫</h1>
+                    <h1> <br> <br>🏰 ကမ္ဘာကျော် Animation စတူဒီယိုကြီးရဲ့ ခရီးကြမ်းနဲ့ မသိသေးတဲ့ Logo သမိုင်း 💫</h1>
                     <div class="article-meta">
                         <span class="author">The Content Era</span>
                         <span class="date">Published on <time datetime="2023-3-01">March 1, 2020</time></span>
@@ -82,7 +119,7 @@ Logo ထဲက လှပတဲ့ရဲတိုက်ကတော့ ၁၉ ရ
         <article class="article-detail" id="article-2" style="display:none;">
             <div class="container">
                 <div class="article-header">
-                    <h1>ဘဏ်အတိုးနှုန်းမြင့်တဲ့ မြန်မာပြည်၊ ဘာကြောင့်လဲ? 💸</h1>
+                    <h1><br> <br>ဘဏ်အတိုးနှုန်းမြင့်တဲ့ မြန်မာပြည်၊ ဘာကြောင့်လဲ? 💸</h1>
                     <div class="article-meta">
                         <span class="author">Sai Maung Lenn</span>
                         <span class="date">Published on <time datetime="2022-10-10">October 10, 2022</time></span>
@@ -146,7 +183,7 @@ Logo ထဲက လှပတဲ့ရဲတိုက်ကတော့ ၁၉ ရ
         <article class="article-detail" id="article-3" style="display:none;">
             <div class="container">
                 <div class="article-header">
-                    <h1>🌍 ငလျင်ရဲ့ ပြင်းအားအဆင့်တွေနဲ့ သိထားသင့်တဲ့ အချက်များ 🚨</h1>
+                    <h1><br> <br>🌍 ငလျင်ရဲ့ ပြင်းအားအဆင့်တွေနဲ့ သိထားသင့်တဲ့ အချက်များ 🚨</h1>
                     <div class="article-meta">
                         <span class="author">Sai Maung Lenn</span>
                         <span class="date">Published on <time datetime="2023-12-05">March 28, 2025</time></span>
@@ -256,7 +293,7 @@ Magnitude level 7.0 မှ အထက်<br>
         <article class="article-detail" id="article-4" style="display:none;">
             <div class="container">
                 <div class="article-header">
-                    <h1>🤩 သူငယ်ချင်း၊ ရည်းစား၊ Game ဖော်... အားလုံးကို တစ်နေရာတည်းမှာ ရှာဖွေနိုင်မယ့် Telemeet Telegram Bot! 💬</h1>
+                    <h1><br> <br>🤩 သူငယ်ချင်း၊ ရည်းစား၊ Game ဖော်... အားလုံးကို တစ်နေရာတည်းမှာ ရှာဖွေနိုင်မယ့် Telemeet Telegram Bot! 💬</h1>
                     <div class="article-meta">
                         <span class="author">Sai Maung Lenn</span>
                         <span class="date">Published on <time datetime="2023-11-28">December 25, 2024</time></span>
@@ -313,7 +350,7 @@ Magnitude level 7.0 မှ အထက်<br>
         <article class="article-detail" id="article-5" style="display:none;">
             <div class="container">
                 <div class="article-header">
-                    <h1>📈 ရွှေဈေးအတက်အကျ- ဘယ်သူက ထိန်းချုပ်တာလဲ၊ ဘာကြောင့်လဲ? 💰</h1>
+                    <h1><br> <br>📈 ရွှေဈေးအတက်အကျ- ဘယ်သူက ထိန်းချုပ်တာလဲ၊ ဘာကြောင့်လဲ? 💰</h1>
                     <div class="article-meta">
                         <span class="author">Sai Maung Lenn</span>
                         <span class="date">Published on <time datetime="2023-10-19">October 19, 2023</time></span>
@@ -420,7 +457,7 @@ Dollar ဈေးဟာ အမြန်အဆန်တတ်လာစေတယ်
         <article class="article-detail" id="article-6" style="display:none;">
             <div class="container">
                 <div class="article-header">
-                    <h1>Novapac Plastic Bottles Distribution</h1>
+                    <h1><br> <br>Novapac Plastic Bottles Distribution</h1>
                     <div class="article-meta">
                         <span class="author">Sai Maung Lenn</span>
                         <span class="date">Published on <time datetime="2025-7-16">July 16, 2025</time></span>
@@ -517,7 +554,7 @@ Novapac ကိုသတိရဖို့ ထပ်မံတိုက်တွ�
         <article class="article-detail" id="article-7" style="display:none;">
             <div class="container">
                 <div class="article-header">
-                    <h1>အိမ်မှာ အသုံးမလိုတော့တဲ့ ပစ္စည်းတွေကို နေရာတစ်နေရာပေးနေရပြီလား</h1>
+                    <h1><br> <br>အိမ်မှာ အသုံးမလိုတော့တဲ့ ပစ္စည်းတွေကို နေရာတစ်နေရာပေးနေရပြီလား</h1>
                     <div class="article-meta">
                         <span class="author">Sai Maung Lenn</span>
                         <span class="date">Published on <time datetime="2025-7-16">July 16, 2025</time></span>
@@ -598,28 +635,107 @@ win-win-win situation လို့တောင်တင်စားရမလာ�
         <article class="article-detail" id="article-8" style="display:none;">
             <div class="container">
                 <div class="article-header">
-                    <h1>Meditation for Creative Flow</h1>
+                    <h1><br> <br> ကော်ဖီချစ်သူများအတွက် တစ်မှုထူးခြားစေမယ့်
+CupCafe' Myanmar ရဲ့ အရသာစုံ 3 In 1 Instant Coffee များ! ☕  </h1>
                     <div class="article-meta">
-                        <span class="author">The Content Era</span>
-                        <span class="date">Published on <time datetime="2023-11-05">November 5, 2023</time></span>
-                        <span class="reading-time">7 min read</span>
+                        <span class="author">Sai Maung Lenn</span>
+                        <span class="date">Published on <time datetime="2025-7-16">July 7, 2025</time></span>
+                        <span class="reading-time">5 min read</span>
                     </div>
                 </div>
                 <div class="article-image">
-                    <img src="images/sample8.jpg" alt="Meditation for Creative Flow">
-                    <p class="image-caption">Meditation can unlock new levels of inspiration</p>
+                    <img src="images/cafe.jpg" alt="Meditation for Creative Flow">
+                    <p class="image-caption">ကော်ဖီချစ်သူများအတွက် တစ်မှုထူးခြားစေမယ့်
+CupCafe' Myanmar ရဲ့ အရသာစုံ 3 In 1 Instant Coffee များ</p>
                 </div>
                 <div class="article-content">
-                    <p>Simple meditation techniques that can enhance your creative process and help you access deeper levels of inspiration...</p>
-                    <h2>Why Meditate?</h2>
-                    <p>Explore the science and benefits behind meditation for creativity.</p>
-                    <h2>Getting Started</h2>
-                    <p>Beginner-friendly meditation practices for writers and creators.</p>
-                    <div class="article-tags">
+                    <p></p>ကော်ဖီချစ်သူများအတွက် တစ်မှုထူးခြားစေမယ့်
+CupCafe' Myanmar ရဲ့ အရသာစုံ 3 In 1 Instant Coffee များ! ☕    
+
+ပုံမှန်သောက်နေကျ ကော်ဖီအရသာကိုကျော်လွန်ကာ
+ဆန်းသစ်ပြီး ထူးကဲပြည့်စုံတဲ့ ခံစားမှုအရသာကို
+မြည်းစမ်းချင်တဲ့မိတ်ဆွေတို့အတွက် 
+CupCafe' Myanmar က ထုတ်လုပ်ထားတဲ့ အရသာလေးမျိုး 3 In 1 Instant Coffee တွေက မိတ်ဆွေတို့ရဲ့
+လိုအပ်ချက်ကို ဖြည့်စည်းပေးမှာအသေအချာပါပဲ။😮
+
+Cupcafe' Myanmar ရဲ့ 3 in 1 instant Coffee ကို
+သောက်ပြီးသွားရင်တော့ အသိနောက်ကျလေခြင်းဆိုပြီး
+မင်မင်တို့ကိုတော့ မဆူပါနဲ့နော်။ 🥹🙏
+
+ကောင်းမွန်သောအရသာထူးခြားမှုများစွာအပြင်
+ကျန်းမာရေးအတွက်ပါ ကောင်းကျိုးများစွာ
+အထောက်အကူပြုဦးမှာဆိုတော့ ကဲဘာလိုသေးလဲ။
+
+Cupcafe' Myanmar မှာ ရရှိနိုင်တဲ့အရသာ
+လေးမျိုး 3 in 1 coffee အရသာများကတော့
+
+• မုယောစပါးအရသာ 
+( Wheat Flavor Instant Coffee)
+• ချောကလက်အရသာ 
+(Chocolate Flavor Instant Coffee)
+•ဟေဇယ်‌စေ့အသီးအရသာ 
+(Hazelnut Flavor Instant Coffee)
+•အုန်းရည်အရသာ 
+(Coconut Flavor Instant Coffee)
+ဆိုပြီး အရသာ၄မျိုးရရှိနိုင်ပါတယ်။
+
+ဘယ် Instant Coffee တွေက ကျန်းမာရေးအတွက်
+ဘယ်လိုအကျိုးကျေးဇူးတွေရရှိနိုင်မလဲ?
+
+☕ မုယောစပါးအရသာ 
+( Wheat Flavor Instant Coffee)
+
+အမျှင်ဓာတ်ကြွယ်ဝ တဲ့ မုယောစပါး ကော်ဖီက အူလမ်းကြောင်းကို အထူးကောင်းမွန်စေပြီး အာဟာရဓာတ်တွေလည်း ပြည့်ဝစွာ ပါဝင်ပါတယ်။ ကျန်းမာရေးကို ဦးစားပေးသူတွေအတွက် အရမ်းသင့်တော်ပါတယ်။
+
+☕ ချောကလက်အရသာ 
+(Chocolate Flavor Instant Coffee)
+
+✅ ကော်ဖီနဲ့ ချောကလက်ရဲ့ ပေါင်းစပ်မှုက သင့်ရဲ့ မှတ်ဉာဏ်နဲ့ စိတ်ခံစားချက်ကို မြှင့်တင်ပေးနိုင်ပါတယ်။ ဦးနှောက်ကျန်းမာရေးအတွက် အကျိုးပြုတဲ့ 
+flavonoids နဲ့ ကဖိန်းဓာတ်တွေ ပါဝင်တာကြောင့် 
+စိတ်ရောကိုယ်ပါ လန်းဆန်းစေမှာပါ။
+
+☕ ဟေဇယ်အစေ့အသီးအရသာ 
+(Hazelnut Flavor Instant Coffee)
+
+✅ ခပ်စိမ့်စိမ့်တဲ့အရသာလေးနဲ့ Hazelnut Flavor ကိုတော့ ကလေးရောလူကြီးပါ ကြိုက်နှစ်သက်ကြပါတယ်။
+ဒီကော်ဖီက ဝမ်းမှန်စေပြီး ကိုယ်အလေးချိန် ထိန်းညှိရာမှာ အထောက်အကူပြုပါတယ်။ နှလုံးကျန်းမာရေးနဲ့ ကိုယ်ခံအားစနစ်ကိုလည်း ကောင်းမွန်စေတာကြောင့်
+နှလုံးအား‌ကောင်း‌ချင်သူများအတွက်
+အလွန်အကျိုးပြုတဲ့ ကော်ဖီတစ်မျိုးပါ။
+
+☕ အုန်းရည်အရသာ 
+(Coconut Flavor Instant Coffee)
+
+✅ အရွယ်တင်နုပျိုလှပစေပြီး ခန္ဓာကိုယ်ကို 
+အန္တရာယ်ရှိတဲ့ free radicals တွေကနေ 
+ကာကွယ်ပေးပြီး အိုမင်းရင့်ရော်မှုကို နှေးကွေးစေပါတယ်။ ကိုယ်အလေးချိန်လျှော့ချဖို့ ကြိုးစားနေသူတွေအတွက်လည်း အဓိက အထောက်အကူပြုနိုင်ပါတယ်။
+
+ဒီလိုအရသာရော ကျန်းမာရေးအတွက်ပါကောင်းမွန်တဲ့
+CupCafe' Myanmar ရဲ့ အရသာစုံ 3 In 1 Instant Coffee တွေကို တစ်ဘူး 5,400 Ks တည်းဖြင့် 
+လက်လီလက်ကားဝယ်ယူရရှိနိုင်ပါပြီ။ 💰
+
+မန္တလေးမြို့တွင်း ဆိုရင် အိမ်အရောက်ငွေချေ 
+Cash On Delivery စနစ်များဖြင့်ဝယ်ယူရရှိနိုင်ပါတယ်။
+
+အခြားမြို့များ ကိုလည်း 
+ကားဂိတ်ကနေ ပို့ဆောင်ပေးပါတယ်။
+
+ရုံးချိန် (မနက် 8:30 မှ ညနေ 5:00) အတွင်း 
+ဖုန်းဆက်ပြီး စုံစမ်းမေးမြန်းနိုင်ပါတယ်။
+
+☎️ ဆက်သွယ်ရန်ဖုန်း : 09984534141
+
+"မိတ်ဆွေတို့ရဲ့လိုအပ်ချက်တိုင်းကို
+ဖြည့်စည်းပေးနိုင်မယ့် Cupcafe' Myanmar"
+
+#CupCafeMyanmar #3In1Coffee #InstantCoffee
+#CoffeeLover #CoffeeTime #MyanmarCoffe #WheatCoffee #ChocolateCoffee #HazelnutCoffee #CoconutCoffee
+#HealthyCoffee #FlavorCoffee</p>
+           
+                    <!-- <div class="article-tags">
                         <a href="#" class="tag">Mindfulness</a>
                         <a href="#" class="tag">Meditation</a>
                         <a href="#" class="tag">Flow</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </article>
@@ -641,12 +757,47 @@ win-win-win situation လို့တောင်တင်စားရမလာ�
 
     <!-- Newsletter (same as index.html) -->
     <section class="newsletter">
-        <!-- Copy newsletter section from index.html -->
+          <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to receive my latest articles and updates</p>
+            <form id="newsletterForm" class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer (same as index.html) -->
     <footer class="footer">
-        <!-- Copy footer from index.html -->
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>About Me</h3>
+                    <p>Content creator sharing insights on writing, creativity, and mindful living.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/maunglenn" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://t.me/maunglenn" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="mailto:maunglenn@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+959984027502" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Sai Maung Lenn. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>
