@@ -1505,7 +1505,7 @@ a {
     .nav-toggle {
         display: block;
     }
-    
+
     .nav-list {
         position: absolute;
         top: 100%;
@@ -1520,37 +1520,37 @@ a {
         visibility: hidden;
         transition: var(--transition);
     }
-    
+
     .nav-list.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
     }
-    
+
     .nav-list li {
         margin: 10px 0;
     }
-    
+
     .hero {
         padding: 120px 0 80px;
     }
-    
+
     .hero h1 {
         font-size: 2rem;
     }
-    
+
     .articles-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .newsletter-form {
         flex-direction: column;
     }
-    
+
     .newsletter-form input {
         margin-bottom: 10px;
     }
-    
+
     .newsletter-form button {
         width: 100%;
     }
@@ -1584,11 +1584,11 @@ a {
     .hero h1 {
         font-size: 1.8rem;
     }
-    
+
     .hero p {
         font-size: 1rem;
     }
-    
+
     .section-title h2 {
         font-size: 1.8rem;
     }
