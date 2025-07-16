@@ -39,7 +39,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 5px;
+    padding: 0 5px; /* default 20px */
 }
 
 img {
