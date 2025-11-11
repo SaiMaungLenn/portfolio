@@ -1,28 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Disable Right Click
+    
     document.addEventListener('contextmenu', event => event.preventDefault());
     
-    // Mobile menu toggle
-    // Mobile menu toggle
+    
+    
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
         mobileMenuButton.innerHTML = mobileMenu.classList.contains('hidden') ? 
-            '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>' :
-            '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+            '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http:
+            '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http:
     });
 
-    // Close mobile menu when clicking on links
+    
     document.querySelectorAll('.mobile-nav-link').forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
-            mobileMenuButton.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+            mobileMenuButton.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http:
         });
     });
 
-    // Active navigation highlighting
+    
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
     
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateActiveLink);
     updateActiveLink();
 
-    // Smooth scrolling for anchor links
+    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Accordion functionality
+    
     const accordionItems = document.querySelectorAll('.accordion-item');
     accordionItems.forEach(item => {
         const header = item.querySelector('.accordion-header');
@@ -73,14 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
         header.addEventListener('click', () => {
             const isOpen = item.classList.contains('open');
             
-            // Close all accordions
+            
             accordionItems.forEach(otherItem => {
                 otherItem.classList.remove('open');
                 otherItem.querySelector('.accordion-content').style.maxHeight = '0';
                 otherItem.querySelector('.accordion-icon').textContent = '+';
             });
             
-            // Open clicked accordion if it was closed
+            
             if (!isOpen) {
                 item.classList.add('open');
                 content.style.maxHeight = content.scrollHeight + 'px';
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Skills Chart
+    
     const ctx = document.getElementById('skillsChart').getContext('2d');
     const skillsChart = new Chart(ctx, {
         type: 'radar',
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Intersection Observer for animations
+    
     const fadeSections = document.querySelectorAll('.fade-in-section');
     
     const observerOptions = {
